@@ -39,10 +39,7 @@ COPY --from=build /tmp/consul /usr/bin/consul
 
 RUN mkdir -p /nomad/data /nomad/config
 
-RUN \
-  apk update && apk add libc6-compat
-  #\
-#  apk add iptables ip6tables iputils ca-certificates libc6-compat
+RUN apk update && apk add libc6-compat iptables ip6tables iputils ca-certificates
 
 VOLUME /nomad/data
 
